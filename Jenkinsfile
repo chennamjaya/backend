@@ -6,15 +6,6 @@ pipeline {
     stage('Download Dependencies'){
       steps {
         sh 'npm install'
-      }
-    }pipeline {
-  agent { label 'new-workstation'}
-
-  stages {
-
-    stage('Download Dependencies'){
-      steps {
-        sh 'npm install'
         sh 'env'
       }
     }
