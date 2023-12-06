@@ -13,7 +13,6 @@ pipeline {
     stage('Code Quality') {
       when {
         allOf {
-          branch 'main'
           expression { env.TAG_NAME != env.BRANCH_NAME }
         }
       }
@@ -26,6 +25,7 @@ pipeline {
     stage('Unit Tests'){
       when {
         allOf {
+          expression { env.TAG_NAME != env.BRANCH_NAME }
           branch 'main'
         }
       }
