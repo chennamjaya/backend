@@ -11,7 +11,7 @@ pipeline {
 
     stage('Code Quality') {
       steps {
-        sh 'sonar-scanner -Dsonar.host.url=http://172.31.34.168:9000 -Dsonar.login=admin -Dsonar.password=admin1234 -Dsonar.projectKey=backend'
+        sh 'sonar-scanner -Dsonar.host.url=http://172.31.34.168:9000 -Dsonar.login=admin -Dsonar.password=admin1234 -Dsonar.projectKey=backend -Dsonar-qualitygate.wait=true'
       }
     }
 
@@ -29,4 +29,4 @@ pipeline {
    }
  }
  
-} /////
+} 
